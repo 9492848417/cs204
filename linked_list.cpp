@@ -22,7 +22,7 @@ void delfirst(Node** str)
 {
 	Node* temp;
 	if(*str==NULL)
-		cout<<"no node";
+		cout<<"-1";
 	else
 	{
 		
@@ -35,7 +35,8 @@ void delfirst(Node** str)
 }
 void search_d(Node** str,float d)
 {
-	int a,b;
+	int a,b,k;
+	k=0;
 	Node* temp;
 	temp=*str;
 	while(temp!=NULL)
@@ -45,9 +46,12 @@ void search_d(Node** str,float d)
 		if((a*a+b*b)<=(d*d))
 		{
 			cout<<"("<<a<<","<<b<<")";
+			k++;
 		}
 		temp=temp->nept;
 	}
+	if(k==0) cout<<"-1";
+	else cout<< k;
 }
 bool search(int a,int b,Node** str)
 {
